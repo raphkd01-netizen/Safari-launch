@@ -1,0 +1,36 @@
+import streamlit as streamlit
+
+from streamlit_lottie import st_lottie 
+
+# emojis here :www.webfix.com/tools/emojis/emoji-cheat-sheet/
+ st.set_page_config(page_title="Safari",page _icon=":party:",layout="wide")
+
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+#------------------LOAD  ASSETS-------------------------------------------------------
+lottie_zoo="https://assets2.lottiefiles.com/packages/lf20_Stt1RZ.json"
+lottie_zoo="https://assets2.lottiefiles.com/packages/lf20_0wz9j5jw.json"
+
+#Header section
+with st.container():
+    st.subheader("Welcome to Safari :Lion:")
+    st.title("Nature's wonders await you :earth_africa:, lets dive into the experience :safari:")
+    st.write("Explore the beauty of nature with us, and discover the incredible wildlife that inhabits our planet. From the majestic lions to the graceful giraffes, our safari tours offer an unforgettable adventure for nature lovers and wildlife enthusiasts alike. Join us on a journey through the heart of the wilderness and witness the wonders of nature up close and personal.")    
+     
+     #---------The Nature call------------
+     with st.container():
+            st.write("---")
+            left_column, right_column = st.columns(2)
+            with left_column:
+                st.header("The Nature call :call_me_hand:")
+                st.write("Experience the thrill of a lifetime with our safari tours, where you can witness the beauty of nature up close and personal. From the majestic lions to the graceful giraffes, our tours offer an unforgettable adventure for nature lovers and wildlife enthusiasts alike. Join us on a journey through the heart of the wilderness and discover the incredible wildlife that inhabits our planet.")
+                st.write("[Learn More >](https://www.safaribookings.com/)")
+            with right_column:
+                st_lottie(lottie_zoo,height=300, key="zoo")
+
+with right_column:
+  st_lottie(lottie_zoo, height=300, key="zoo")  
